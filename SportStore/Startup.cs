@@ -18,7 +18,7 @@ namespace SportStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IProductRepository, FakeProductRepository>();
-            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,10 +27,12 @@ namespace SportStore
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            //app.UseMvc(routes =>
-            //{
-
-            //});
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Product}/{action=List}/{id?}");
+            });
         }
     }
 }
