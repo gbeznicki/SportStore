@@ -25,10 +25,10 @@ namespace SportStore
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvc(routes =>
-            {
+            //app.UseMvc(routes =>
+            //{
 
-            });
+            //});
         }
     }
 }
