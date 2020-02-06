@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet"
           asp-href-include="/lib/bootstrap/**/*.min.css"
-          asp-href-exclude="**/*-reboot*,**/*-grid*" />
+          asp-href-exclude="*-reboot*,*-grid*" />
     <title>SportStore</title>
 </head>
 <body>
-    <div class="navbar navbar-inverse bg-inverse" role="navigation">
+    <nav class="navbar navbar-dark bg-primary">
         <a class="navbar-brand" href="#">SPORTS STORE</a>
-    </div>
+    </nav>
     <div class="row m-1 p-1">
         <div id="categories" class="col-3">
             @await Component.InvokeAsync("NavigationMenu")
